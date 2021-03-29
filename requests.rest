@@ -1,0 +1,38 @@
+###
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+    "title":"TEST 3",
+    "description":"TEST DESC 3",
+    "price":"123456789"
+}
+
+
+###
+
+GET http://localhost:3000/products
+
+
+###
+
+GET http://localhost:3000/products/Fri Mar 26 2021 15:30:47 GMT+0545 (Nepal Time)0.031957119345608964
+
+###
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+      "userName":"abc",
+      "userGender":"abc",
+      "userPhone":"abc",
+      "userEmail":"abc",
+      "userAddress":"abc",
+      "userNationality":"abc",
+      "userDob":"abc",
+      "userEducation":"abc",
+      "userModeOfContact":"abc",
+}
+
+
+###
