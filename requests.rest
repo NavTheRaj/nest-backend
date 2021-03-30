@@ -1,5 +1,5 @@
 ###
-POST http://localhost:3000/products
+POST http://localhost:3001/products
 Content-Type: application/json
 
 {
@@ -11,28 +11,36 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:3000/products
+GET http://localhost:3001/products
 
 
 ###
 
-GET http://localhost:3000/products/Fri Mar 26 2021 15:30:47 GMT+0545 (Nepal Time)0.031957119345608964
+GET http://localhost:3001/products/Fri Mar 26 2021 15:30:47 GMT+0545 (Nepal Time)0.031957119345608964
 
 ###
-POST http://localhost:3000/users
+POST http://localhost:3001/users
 Content-Type: application/json
 
 {
-      "userName":"abc",
-      "userGender":"abc",
-      "userPhone":"abc",
-      "userEmail":"abc",
-      "userAddress":"abc",
-      "userNationality":"abc",
-      "userDob":"abc",
-      "userEducation":"abc",
-      "userModeOfContact":"abc",
+      "name":"abc",
+      "gender":"abc",
+      "phone":"abc",
+      "email":"abc",
+      "address":"abc",
+      "nationality":"abc",
+      "dob":"abc",
+      "education":"abc",
+      "modeOfContact":"abc"
 }
+
+
+###
+
+
+###
+
+GET http://localhost:3001/users
 
 
 ###
