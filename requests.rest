@@ -1,22 +1,3 @@
-###
-POST http://localhost:3001/products
-Content-Type: application/json
-
-{
-    "title":"TEST 3",
-    "description":"TEST DESC 3",
-    "price":"123456789"
-}
-
-
-###
-
-GET http://localhost:3001/products
-
-
-###
-
-GET http://localhost:3001/products/Fri Mar 26 2021 15:30:47 GMT+0545 (Nepal Time)0.031957119345608964
 
 ###
 POST http://localhost:3001/users
