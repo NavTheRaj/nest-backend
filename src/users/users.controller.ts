@@ -31,7 +31,7 @@ export class UsersController {
     @Body('gender') userGender: string,
     @Body('phone') userPhone: string,
     @Body('email') userEmail: string,
-    @Body('gender') userAddress: string,
+    @Body('address') userAddress: string,
     @Body('nationality') userNationality: string,
     @Body('dob') userDob: string,
     @Body('education') userEducation: string,
