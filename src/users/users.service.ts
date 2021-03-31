@@ -4,7 +4,8 @@ import { User } from './user.model';
 @Injectable()
 export class UsersService {
   converter = require('json-2-csv');
-  fs = require('fs');
+  fsread = require('fs').promises;
+  fswrite = require('fs');
   private Users: User[] = [];
   private UsersFromCsv: User[] = [];
 
@@ -44,15 +45,15 @@ export class UsersService {
       }
       console.log(csv);
 
-      this.fs.writeFileSync('users.csv', csv);
+      this.fswrite.writeFileSync('users.csv', csv);
     });
   }
 
-  readFromCsv() {
-    this.fs.readFile('users.csv', (err: any, data: any) => {
-      if (err) {
-        throw err;
-      }
+  async readFromCsv() {
+    const allUsers = [];
+
+    try {
+      const data = await this.fsread.readFile('users.csv');
 
       const allData = data.toString().split('\n');
 
@@ -73,15 +74,17 @@ export class UsersService {
             singleData[9],
           );
 
-          this.UsersFromCsv.push(newUser);
+          allUsers.push(newUser);
         }
       });
-    });
+      return allUsers;
+    } catch (err) {
+      throw new Error();
+    }
   }
 
-  getUsers() {
-    this.readFromCsv();
-    return [...this.UsersFromCsv];
+  async getUsers() {
+    return [...(await this.readFromCsv())];
   }
 
   getSingleUser(UserId: string) {

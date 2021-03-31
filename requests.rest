@@ -1,16 +1,16 @@
 
 ###
 POST http://localhost:3001/users
-Content-Type: application/json
+Content-Type:application/json
 
 {
       "name":"abc",
       "gender":"abc",
-      "phone":"abc",
-      "email":"abc",
+      "phone":9813832136,
+      "email":"abc@abc.com",
       "address":"abc",
       "nationality":"abc",
-      "dob":"abc",
+      "dob":"2001/10/12",
       "education":"abc",
       "modeOfContact":"abc"
 }
@@ -22,6 +22,5 @@ Content-Type: application/json
 ###
 
 GET http://localhost:3001/users
-
 
 ###
