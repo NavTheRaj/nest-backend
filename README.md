@@ -6,8 +6,11 @@
 
 ### Manuals To Run the server
 
-- Install the dependencies - ### `npm install`
-- Start the server in development mode - ### `npm run start:dev`
+- Install the dependencies - `npm install`
+- Start the server in development mode - `npm run start:dev`
+- For POST request hit the link for passing user's data - `http:localhost:8080/users`
+- For GET request to get all the users saved in the server file - `http:localhost:8080/users`
+- For GET request to get a specific user with his/her ID - `http:localhost:8080/users/:id` 
 
 </p>
 
