@@ -10,7 +10,6 @@ export class UserDTO {
   readonly gender: string;
 
   @IsNotEmpty()
-  @IsNumber()
   readonly phone: string;
 
   @IsEmail()

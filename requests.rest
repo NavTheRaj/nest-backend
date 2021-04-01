@@ -6,7 +6,7 @@ Content-Type:application/json
 {
       "name":"abc",
       "gender":"abc",
-      "phone":9813832136,
+      "phone":"9813832136",
       "email":"abc@abc.com",
       "address":"abc",
       "nationality":"abc",
@@ -17,10 +17,13 @@ Content-Type:application/json
 
 
 ###
+GET http://localhost:3001/users
+
+###
 
 
 ###
 
-GET http://localhost:3001/users
+GET http://localhost:3001/users/4qyi2H8alsGnYTiibwJbw
 
 ###

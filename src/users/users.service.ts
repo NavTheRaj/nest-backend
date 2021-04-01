@@ -1,5 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { User } from './user.model';
+import { nanoid } from 'nanoid';
 
 @Injectable()
 export class UsersService {
@@ -7,7 +8,6 @@ export class UsersService {
   fsread = require('fs').promises;
   fswrite = require('fs');
   private Users: User[] = [];
-  private UsersFromCsv: User[] = [];
 
   insertUser(
     userName: string,
@@ -20,22 +20,26 @@ export class UsersService {
     userEducation: string,
     userModeOfContact: string,
   ) {
-    const UserId = new Date().toString() + Math.random().toString();
-    const newUser = new User(
-      UserId,
-      userName,
-      userGender,
-      userPhone,
-      userEmail,
-      userAddress,
-      userNationality,
-      userDob,
-      userEducation,
-      userModeOfContact,
-    );
-    this.Users.push(newUser);
-    this.saveUserToCsv();
-    return UserId;
+    try {
+      const UserId = nanoid();
+      const newUser = new User(
+        UserId,
+        userName,
+        userGender,
+        userPhone,
+        userEmail,
+        userAddress,
+        userNationality,
+        userDob,
+        userEducation,
+        userModeOfContact,
+      );
+      this.Users.push(newUser);
+      this.saveUserToCsv();
+      return UserId;
+    } catch (err) {
+      throw new Error();
+    }
   }
 
   saveUserToCsv() {
@@ -87,8 +91,9 @@ export class UsersService {
     return [...(await this.readFromCsv())];
   }
 
-  getSingleUser(UserId: string) {
-    const User = this.Users.find((user) => user.id === UserId);
+  async getSingleUser(UserId: string) {
+    const users = await this.readFromCsv();
+    const User = users.find((user) => user.id === UserId);
     if (!User) {
       throw new NotFoundException('User Doesnot exist!');
     }
