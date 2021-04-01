@@ -4,6 +4,15 @@
 
 <p align="center">
 
+### Manuals To Run the server
+
+- Install the dependencies - ### `npm install`
+- Start the server in development mode - ### `npm run start:dev`
+
+</p>
+
+<p align="center">
+
 ### Installed Dependencies
 
 - react-router-dom - For generating the links and routes
