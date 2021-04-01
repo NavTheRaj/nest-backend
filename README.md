@@ -3,6 +3,8 @@
 </p>
 
 <p align="center">
+### Manuals To Run the server
+- This project attempts to create a simple backend server with the nestjs framework. This server entertains the data provided from post reuqest with the users data that contains `name`,`gender`,`Phone Number`, `Email`, `Address`, `Nationality`, `Date of Birth`, `Educational Background` and `Preferred mode of contact`.
 
 ### Manuals To Run the server
 
